@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recorder:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:recorder="http://www.workfusion.com/recorder/v1.2.0" ignoreDelays="false">
+  <variables>
+    <variable name="temp" type="STRING" value=""/>
+    <variable name="list" type="LIST" value="[]"/>
+    <variable name="price" type="STRING" value=""/>
+  </variables>
+  <actions xsi:type="recorder:OpenURLAction" active="true" actionDetails="(www.amazon.in)" delay="0" url="www.amazon.in" waitTimeout="90000">
+    <actions xsi:type="recorder:OpenSpreadsheetAction" active="true" actionDetails="(&quot;C:\Users\kiit1... Workbook.xlsx&quot;)" delay="0" filePath="C:\Users\kiit1\Desktop\New Microsoft Excel Workbook.xlsx" autoSaveFile="true">
+      <actions xsi:type="recorder:GetColumnAction" varName="list" active="true" actionDetails="(First)" delay="0"/>
+      <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(C2)" delay="0" useCellCoordinates="true" cellCoordinates="C2"/>
+      <actions xsi:type="recorder:ForeachAction" active="true" actionDetails="(element) in (list)" delay="0" varName="list" pointerName="element" filterExpression="2-11">
+        <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 5000 ms" delay="5000"/>
+        <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(triple-click left button)" delay="0" offsetX="-26" offsetY="-1" imageName="1526369878288-anchor-1526369878318.apng" fullImageName="1526369878288.png" searchInFrames="false" button="1" clickType="TRIPLE_CLICK"/>
+        <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'element')" delay="0" varName="element" type="TEXT_FROM_VAR"/>
+        <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+        <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 15000 ms" delay="15000"/>
+        <actions xsi:type="recorder:WebElementAction" active="true" actionDetails="(get by /html/body/div[1]/div[2]/div/div[3]/div[2]/div/div[4]/div[1]/div/ul/li[1]/div/div/div/div[2]/div[2]/div[1]/div[1]/a/span xpath)" delay="0" varName="price" xPath="/html/body/div[1]/div[2]/div/div[3]/div[2]/div/div[4]/div[1]/div/ul/li[1]/div/div/div/div[2]/div[2]/div[1]/div[1]/a/span" searchInFrames="false" useElementAttribute="false"/>
+        <actions xsi:type="recorder:SetCellValueAction" varName="price" active="true" actionDetails="(Current)" delay="0" cellPosition="CURRENT"/>
+        <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(Cell below)" delay="0" cellPosition="CELL_BELOW"/>
+        <actions xsi:type="recorder:SaveSpreadsheetAction" active="true" actionDetails="" delay="0"/>
+      </actions>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({F6})" delay="0" text="{F6}" rawCode="117" keyCode="64" keyLocation="1"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(typed text)" delay="0" text="www.paytmmall.com" type="KEY_TYPE"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+      <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 4000 ms" delay="4000"/>
+      <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(D2)" delay="0" useCellCoordinates="true" cellCoordinates="D2"/>
+      <actions xsi:type="recorder:ForeachAction" active="true" actionDetails="(element) in (list)" delay="0" varName="list" pointerName="element" filterExpression="2-11">
+        <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 6000 ms" delay="6000"/>
+        <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" offsetX="-19" offsetY="-2" imageName="1526443593334-anchor-1526443593350.apng" fullImageName="1526443593334.png" searchInFrames="false" button="1"/>
+        <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'element')" delay="0" varName="element" type="TEXT_FROM_VAR"/>
+        <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+        <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 10000 ms" delay="10000"/>
+        <actions xsi:type="recorder:WebElementAction" active="true" actionDetails="(get by /html/body/div[1]/div/div[3]/div/div/div[3]/div[2]/div[1]/div[1]/div/a/div[3]/div[2]/div/span[2]/span xpath)" delay="0" varName="price" xPath="/html/body/div[1]/div/div[3]/div/div/div[3]/div[2]/div[1]/div[1]/div/a/div[3]/div[2]/div/span[2]/span" searchInFrames="false" useElementAttribute="false"/>
+        <actions xsi:type="recorder:SetCellValueAction" varName="price" active="true" actionDetails="(Current)" delay="0" cellPosition="CURRENT"/>
+        <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(Cell below)" delay="0" cellPosition="CELL_BELOW"/>
+        <actions xsi:type="recorder:SaveSpreadsheetAction" active="true" actionDetails="" delay="0"/>
+      </actions>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({F6})" delay="0" text="{F6}" rawCode="117" keyCode="64" keyLocation="1"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(typed text)" delay="0" text="www.flipkart.com" type="KEY_TYPE"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+      <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 20000 ms" delay="20000"/>
+      <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ESCAPE})" delay="0" text="{ESCAPE}" rawCode="27" keyCode="1" keyChar="27" keyLocation="1"/>
+      <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(B2)" delay="0" useCellCoordinates="true" cellCoordinates="B2"/>
+      <actions xsi:type="recorder:ForeachAction" active="true" actionDetails="(element) in (list)" delay="0" varName="list" pointerName="element" filterExpression="2-11">
+        <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" offsetX="-52" offsetY="-4" imageName="1526285995303-anchor-1526285995320.apng" fullImageName="1526285995303.png" searchInFrames="false" button="1"/>
+        <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'element')" delay="0" varName="element" type="TEXT_FROM_VAR"/>
+        <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" modifiers="256" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+        <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 5000 ms" delay="5000"/>
+        <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button, position: 377, 330)" delay="0" x="377" y="330" type="COORDINATES" searchInFrames="false" button="1"/>
+        <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 6000 ms" delay="6000"/>
+        <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(triple-click left button)" delay="0" x="500" y="330" imageName="1526285628544-anchor-1526285628554.apng" fullImageName="1526285628544.png" searchInFrames="false" button="1" clickType="TRIPLE_CLICK"/>
+        <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(Ctrl+c)" delay="0" modifiers="2" text="c" rawCode="67" keyCode="46" keyChar="99" keyLocation="1" type="HOT_KEY_PRESS"/>
+        <actions xsi:type="recorder:ClipboardAction" active="true" actionDetails="(to 'price')" delay="0" varName="price" activeConversion="STRING_TO_STRING" type="TO_VARIABLE">
+          <stringToStringConversion targetType="STRING"/>
+          <delimitedListConversion targetType="LIST" trimValues="false"/>
+          <delimitedTableConversion targetType="TABLE" trimValues="false"/>
+        </actions>
+        <actions xsi:type="recorder:SetCellValueAction" varName="price" active="true" actionDetails="(Current)" delay="0" cellPosition="CURRENT"/>
+        <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(Cell below)" delay="0" cellPosition="CELL_BELOW"/>
+        <actions xsi:type="recorder:SaveSpreadsheetAction" active="true" actionDetails="" delay="0"/>
+      </actions>
+    </actions>
+  </actions>
+</recorder:ActionFlow>

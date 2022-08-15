@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recorder:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:recorder="http://www.workfusion.com/recorder/v1.2.0" ignoreDelays="false">
+  <variables>
+    <variable name="email" type="STRING" value="tui20das"/>
+    <variable name="pass" type="STRING" value="Tui@30das"/>
+    <variable name="tab" type="TABLE" value="[]"/>
+    <variable name="msg1" type="STRING" value=""/>
+    <variable name="msg2" type="STRING" value=""/>
+    <variable name="msg3" type="STRING" value=""/>
+    <variable name="status" type="STRING" value="sent"/>
+    <variable name="w" type="STRING" value=""/>
+    <variable name="x" type="STRING" value=""/>
+  </variables>
+  <actions xsi:type="recorder:OpenURLAction" active="true" actionDetails="(www.gmail.com)" delay="0" url="www.gmail.com" waitTimeout="90000">
+    <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" type="XPATH" xPath="//*[@id=&quot;identifierId&quot;]" searchInFrames="false" button="1"/>
+    <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'email')" delay="0" varName="email" type="TEXT_FROM_VAR"/>
+    <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" modifiers="256" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+    <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" offsetX="-115" offsetY="8" imageName="1526131395391-anchor-1526131395426.apng" fullImageName="1526131395391.png" searchInFrames="false" button="1"/>
+    <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'pass')" delay="0" varName="pass" type="TEXT_FROM_VAR"/>
+    <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+    <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 10000 ms" delay="10000"/>
+    <actions xsi:type="recorder:OpenSpreadsheetAction" active="true" actionDetails="(&quot;C:\Users\kiit1\Desktop\mail.xlsx&quot;)" delay="0" filePath="C:\Users\kiit1\Desktop\mail.xlsx" autoSaveFile="true">
+      <actions xsi:type="recorder:ExcelGetRangeAction" active="true" actionDetails="(A1:E2 to 'tab')" delay="0" targetVariable="tab" coordinateFrom="A1" coordinateTo="E2"/>
+      <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(F1)" delay="0" useCellCoordinates="true" cellCoordinates="F1"/>
+      <actions xsi:type="recorder:ForeachAction" active="true" actionDetails="(element) in (tab)" delay="0" varName="tab" pointerName="element">
+        <actions xsi:type="recorder:GetCellValueAction" varName="w" active="true" actionDetails="(Current)" delay="0" cellPosition="CURRENT"/>
+        <actions xsi:type="recorder:IfElseAction" active="true" actionDetails="(w = &quot;&quot;)" delay="0" leftOperand="${w}" leftOperandType="VARIABLE" rightOperandType="STRING">
+          <ifBlock active="true">
+            <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" imageName="1526132124143-anchor-1526132124175.apng" fullImageName="1526132124143.png" searchInFrames="false" button="1"/>
+            <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 10000 ms" delay="10000"/>
+            <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" offsetX="13" offsetY="-22" imageName="1526132168319-anchor-1526132168332.apng" fullImageName="1526132168319.png" searchInFrames="false" button="1"/>
+            <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'element')" delay="0" varName="element" arrayIndex="1" type="TEXT_FROM_VAR"/>
+            <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="({ENTER})" delay="0" text="{ENTER}" rawCode="10" keyCode="28" keyChar="13" keyLocation="4"/>
+            <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" offsetX="-9" offsetY="-3" imageName="1526132244795-anchor-1526132244803.apng" fullImageName="1526132244795.png" searchInFrames="false" button="1"/>
+            <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'element')" delay="0" varName="element" arrayIndex="2" type="TEXT_FROM_VAR"/>
+            <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" offsetY="-19" imageName="1526132339270-anchor-1526132339278.apng" fullImageName="1526132339270.png" searchInFrames="false" button="1"/>
+            <actions xsi:type="recorder:GetCellValueAction" varName="msg1" active="true" actionDetails="(A4)" delay="0" useCellCoordinates="true" cellCoordinates="A4"/>
+            <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'msg1')" delay="0" varName="msg1" type="TEXT_FROM_VAR"/>
+            <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'element')" delay="0" varName="element" arrayIndex="3" type="TEXT_FROM_VAR"/>
+            <actions xsi:type="recorder:GetCellValueAction" varName="msg2" active="true" actionDetails="(B4)" delay="0" useCellCoordinates="true" cellCoordinates="B4"/>
+            <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'msg2')" delay="0" varName="msg2" type="TEXT_FROM_VAR"/>
+            <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'element')" delay="0" varName="element" arrayIndex="4" type="TEXT_FROM_VAR"/>
+            <actions xsi:type="recorder:GetCellValueAction" varName="msg3" active="true" actionDetails="(C4)" delay="0" useCellCoordinates="true" cellCoordinates="C4"/>
+            <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'msg3')" delay="0" varName="msg3" type="TEXT_FROM_VAR"/>
+            <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" imageName="1526307838796-anchor-1526307838854.apng" fullImageName="1526307838796.png" searchInFrames="false" button="1"/>
+            <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" offsetX="31" offsetY="-1" imageName="1526307877748-anchor-1526307877774.apng" fullImageName="1526307877748.png" searchInFrames="false" button="1"/>
+            <actions xsi:type="recorder:KeyboardAction" active="true" actionDetails="(from variable 'element')" delay="0" varName="element" arrayIndex="5" type="TEXT_FROM_VAR"/>
+            <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" imageName="1526307962639-anchor-1526307962666.apng" fullImageName="1526307962639.png" searchInFrames="false" button="1"/>
+            <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 10000 ms" delay="10000"/>
+            <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" imageName="1526132707330-anchor-1526132707340.apng" fullImageName="1526132707330.png" searchInFrames="false" button="1"/>
+            <actions xsi:type="recorder:WaitForImageAction" active="true" actionDetails="(5000 ms)" delay="0" imageName="1526132787569-anchor.apng" fullImageName="1526132765574.png" waitTimeout="5000"/>
+            <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(F1)" delay="0" useCellCoordinates="true" cellCoordinates="F1"/>
+            <actions xsi:type="recorder:GetCellValueAction" varName="x" active="true" actionDetails="(Current)" delay="0" cellPosition="CURRENT"/>
+            <actions xsi:type="recorder:IfElseAction" active="true" actionDetails="(x = &quot;&quot;)" delay="0" leftOperand="${x}" leftOperandType="VARIABLE" rightOperandType="STRING">
+              <ifBlock active="true">
+                <actions xsi:type="recorder:SetCellValueAction" varName="status" active="true" actionDetails="(Current)" delay="0" cellPosition="CURRENT"/>
+                <actions xsi:type="recorder:SaveSpreadsheetAction" active="true" actionDetails="" delay="0"/>
+                <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(Cell below)" delay="0" cellPosition="CELL_BELOW"/>
+              </ifBlock>
+              <elseBlock active="true">
+                <actions xsi:type="recorder:WhileAction" active="true" actionDetails="(x != &quot;&quot;)" delay="0" leftOperand="${x}" operator="NOT_EQUALS" leftOperandType="VARIABLE" rightOperandType="STRING">
+                  <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(Cell below)" delay="0" cellPosition="CELL_BELOW"/>
+                  <actions xsi:type="recorder:GetCellValueAction" varName="x" active="true" actionDetails="(Current)" delay="0" cellPosition="CURRENT"/>
+                </actions>
+                <actions xsi:type="recorder:SetCellValueAction" varName="status" active="true" actionDetails="(Current)" delay="0" cellPosition="CURRENT"/>
+                <actions xsi:type="recorder:SaveSpreadsheetAction" active="true" actionDetails="" delay="0"/>
+                <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(Cell below)" delay="0" cellPosition="CELL_BELOW"/>
+              </elseBlock>
+            </actions>
+          </ifBlock>
+          <elseBlock active="true">
+            <actions xsi:type="recorder:ExcelSetActiveCellAction" active="true" actionDetails="(Cell below)" delay="0" cellPosition="CELL_BELOW"/>
+          </elseBlock>
+        </actions>
+      </actions>
+      <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" imageName="1526132946754-anchor-1526132946766.apng" fullImageName="1526132946754.png" searchInFrames="false" button="1"/>
+      <actions xsi:type="recorder:MouseClickAction" active="true" actionDetails="(click left button)" delay="0" offsetX="-5" offsetY="3" imageName="1526132961912-anchor-1526132961922.apng" fullImageName="1526132961912.png" searchInFrames="false" button="1"/>
+    </actions>
+    <actions xsi:type="recorder:WaitAction" active="true" actionDetails="for 10000 ms" delay="10000"/>
+  </actions>
+</recorder:ActionFlow>
